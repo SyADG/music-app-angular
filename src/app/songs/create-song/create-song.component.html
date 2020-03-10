@@ -1,0 +1,23 @@
+<h2>Add Song</h2>
+<div class="container col-2">
+
+    <form class="form-group" [formGroup]="createSongForm" (ngSubmit)="create()">
+        <div formGroupName="song">
+            <label for="name">
+                Name:
+                <input type="text" class="form-control" placeholder="Insert the song name" formControlName="name">
+            </label>
+
+            <label for="date">
+                Date:
+                <input type="date" placeholder="00-00-0000" class="form-control" formControlName="date" >
+            </label>
+        </div>
+        <div class="option">
+            <button class="btn" [disabled]="!createSongForm.valid" type="submit">Add</button>
+            <button class="btn" (click)="cancel()">Cancel</button>
+        </div>
+
+    </form>
+
+</div>

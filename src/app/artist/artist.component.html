@@ -1,0 +1,23 @@
+<h2>Artists</h2>
+<div class="container">
+    <table *ngIf="artists$" class="container table green-table col-7">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let artist of artists$ | async" [title]="'Click to show ' + artist.name + '\'s songs'" routerLink='/artist/{{artist.id}}/songs'>
+                <td>{{artist.name}}</td>
+                <td>{{artist.genre}}</td>
+                <td>
+                    <a routerLink='/artist/update/{{artist.id}} '>Edit</a> | <a routerLink='/artist/delete/{{artist.id}} '>Remove</a> </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container" id="unic-button">
+        <a routerLink='/artist/create'><button class="btn">Create artist</button></a>
+    </div>
+</div>

@@ -22,5 +22,9 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "proxies": [{
+    "path": "/artist",
+    "proxyUrl": "http://localhost:8080"
+  }]
 }

@@ -1,0 +1,23 @@
+<h2>Update Artist</h2>
+<div class="container col-2">
+    <div class="form-group col-20">
+
+        <form class="form-group" [formGroup]="updateArtistForm" (ngSubmit)="update()">
+
+            <label>
+            Name:
+            <input class="form-control" placeholder="Insert artist name" type="text" formControlName="name">
+          </label>
+
+            <label>
+            Genre:
+            <input class="form-control" placeholder="Insert music genre" type="text" formControlName="genre">
+          </label>
+
+            <div class="option col-10">
+                <button type="submit" [disabled]="!updateArtistForm.valid" class="btn">Update</button>
+                <button class="btn" (click)="cancel()">Cancel</button>
+            </div>
+
+        </form>
+    </div>

@@ -1,0 +1,22 @@
+<h2>Do you realy want to remove this artist?</h2>
+<div class="container col-4" *ngIf="artist">
+
+    <table class="table delete">
+        <tr>
+            <th>Id:</th>
+            <td>{{artist.id}}</td>
+        </tr>
+        <tr>
+            <th>Name:</th>
+            <td>{{artist.name | uppercase}}</td>
+        </tr>
+        <tr>
+            <th>Genre:</th>
+            <td>{{artist.genre | uppercase}}</td>
+        </tr>
+    </table>
+    <div class="container col-10 option">
+        <button class="btn" (click)="delete()">Delete</button>
+        <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+</div>

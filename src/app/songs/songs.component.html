@@ -1,0 +1,23 @@
+<h2>Songs</h2>
+
+<div *ngIf="songs$" class="container">
+    <table class="container green-table col-5 table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let song of songs$ | async" [title]="song.name + ' options'" routerLink='{{song.id}}'>
+                <td>{{song.name}}</td>
+                <td>{{song.date + 4| mask: '0000-00-00' | date: 'dd/MM/yyyy'}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div class="option col-7">
+        <a routerLink='add'><button class="btn">Add new song</button></a>
+        <button class="btn" (click)="back()">Back</button>
+    </div>
+</div>
