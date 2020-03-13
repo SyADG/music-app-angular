@@ -14,7 +14,7 @@ export class AuthenticationService {
   ) { }
 
   authenticate(username, password) {
-    return this.http.post<any>('http://localhost:8080/authenticate', { username, password }).pipe(
+    return this.http.post<any>('https://music-app-spring.azurewebsites.net/authenticate', { username, password }).pipe(
       map(
         userData => {
           sessionStorage.setItem('username', username);

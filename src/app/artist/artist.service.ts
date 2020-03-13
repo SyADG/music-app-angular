@@ -10,7 +10,7 @@ import { FormGroup } from '@angular/forms';
 
 export class ArtistService {
 
-  private url = "http://localhost:8080/artists"
+  private url = "https://music-app-spring.azurewebsites.net/artists"
 
   private artists = new BehaviorSubject<Artist[]>([]);
 
