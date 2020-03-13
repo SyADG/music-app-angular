@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SongService } from '../song.service';
+import { SongService } from '../../service/song.service';
 import { Location } from "@angular/common";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 

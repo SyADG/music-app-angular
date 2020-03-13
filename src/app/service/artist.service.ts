@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Artist, RequestArtist } from './artist.model';
+import { Artist, RequestArtist } from '../artist/artist.model';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { FormGroup } from '@angular/forms';
 
 export class ArtistService {
 
-  private url = "https://music-app-spring.azurewebsites.net/artists"
+  private url = `${environment.url}/artists`
 
   private artists = new BehaviorSubject<Artist[]>([]);
 
@@ -19,7 +20,6 @@ export class ArtistService {
   constructor(private http: HttpClient) { }
 
   getArtists(): void {
-    console.warn(sessionStorage.getItem('username'))
     const headers = new HttpHeaders({ Authorization: 'Bearer ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password')) });
     this.http.get<Artist[]>(this.url, {headers})
       .subscribe(response => this.artists.next(response));

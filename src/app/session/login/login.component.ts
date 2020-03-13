@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../../service/authentication.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -34,10 +34,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate([''])
-          // this.invalidLogin = false
         },
         error => {
-          // this.invalidLogin = true
 
         }
       )

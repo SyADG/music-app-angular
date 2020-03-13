@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SongService } from '../song.service';
+import { SongService } from '../../service/song.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Location, formatDate } from "@angular/common";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -36,7 +35,6 @@ export class CreateSongComponent implements OnInit {
   })
   constructor(
     private songService: SongService,
-    private location: Location,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) { }
@@ -44,7 +42,6 @@ export class CreateSongComponent implements OnInit {
   ngOnInit() { }
 
   create() {
-    // console.warn(this.createSongForm)
     this.songService.createSong(this.id, this.createSongForm).subscribe();
     this.router.navigate(['/..']);
   }

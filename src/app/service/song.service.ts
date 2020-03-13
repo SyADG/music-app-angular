@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Song, RequestSong, RequestCreateSong } from './songs.model';
+import { Song, RequestSong, RequestCreateSong } from '../songs/songs.model';
 import { FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SongService {
 
-  private url = `http://localhost:8080/artists/`
+  private url = `${environment.url}/artists/`
 
   private songs = new BehaviorSubject<Song[]>([]);
 

@@ -8,13 +8,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link navbar-dark scroll-link" routerLink='/login'>Login</a>
+                        <a *ngIf="!authenticationService.isUserLoggedIn()" class="nav-link navbar-dark scroll-link" routerLink='/login'>Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navbar-dark scroll-link" routerLink='/artist'>Artists</a>
                     </li>
                     <li>
-                        <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a>
+                        <a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a>
                     </li>
                 </ul>
             </div>

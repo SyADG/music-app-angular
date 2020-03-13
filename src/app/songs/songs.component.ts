@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestSong } from './songs.model';
-import { SongService } from './song.service';
+import { SongService } from '../service/song.service';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 

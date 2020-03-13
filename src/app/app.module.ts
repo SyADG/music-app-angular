@@ -14,10 +14,10 @@ import { CreateSongComponent } from './songs/create-song/create-song.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { OptionsComponent } from './songs/options/options.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './login/logout/logout.component';
-import { BasicAuthHttpInterceptorService } from './login/basic-auth-http-interceptor.service';
-export let options: Partial<IConfig> | (() => Partial<IConfig>);
+import { LoginComponent } from './session/login/login.component';
+import { LogoutComponent } from './session/logout/logout.component';
+import { BasicAuthHttpInterceptorService } from './service/basic-auth-http-interceptor.service';
+export let options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 @NgModule({
   declarations: [
     AppComponent,

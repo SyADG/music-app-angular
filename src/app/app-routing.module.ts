@@ -8,9 +8,9 @@ import { SongsComponent } from './songs/songs.component';
 import { CreateSongComponent } from "./songs/create-song/create-song.component";
 
 import { OptionsComponent } from "./songs/options/options.component";
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './login/logout/logout.component';
-import { AuthGuardService } from './login/auth-guard.service';
+import { LoginComponent } from './session/login/login.component';
+import { LogoutComponent } from './session/logout/logout.component';
+import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: ArtistComponent, canActivate: [AuthGuardService]  },

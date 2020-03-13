@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Artist } from '../artist.model';
-import { ArtistService } from '../artist.service';
+import { ArtistService } from '../../service/artist.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from "@angular/common";
 

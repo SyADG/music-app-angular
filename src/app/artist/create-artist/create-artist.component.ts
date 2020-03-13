@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtistService } from '../artist.service';
+import { ArtistService } from '../../service/artist.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 

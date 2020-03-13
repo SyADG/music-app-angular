@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpHeaderResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -8,18 +9,18 @@ import { map } from 'rxjs/operators';
 })
 export class AuthenticationService {
 
+  private url = `${environment.url}/authenticate`
 
   constructor(
     private http: HttpClient
   ) { }
 
   authenticate(username, password) {
-    return this.http.post<any>('https://music-app-spring.azurewebsites.net/authenticate', { username, password }).pipe(
+    return this.http.post<any>(this.url, { username, password }).pipe(
       map(
         userData => {
           sessionStorage.setItem('username', username);
           let tokenStr = 'Bearer ' + userData.token;
-          console.warn(userData.token);
           sessionStorage.setItem('token', tokenStr);
           return userData;
         }
