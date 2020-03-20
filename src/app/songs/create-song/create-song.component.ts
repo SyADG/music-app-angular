@@ -18,20 +18,12 @@ export class CreateSongComponent implements OnInit {
   ]
   validationDate = [
     Validators.required,
-    // Validators.minLength(8),
     Validators.maxLength(10)
   ]
 
   createSongForm = new FormGroup({
-    artist: new FormGroup({
-      id: new FormControl(''),
-    }),
-    id: new FormControl(''),
-    song: new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl('', this.validation),
-      date: new FormControl('', this.validation)
-    })
+    name: new FormControl('', this.validation),
+    date: new FormControl('', this.validation)
   })
   constructor(
     private songService: SongService,
@@ -43,10 +35,10 @@ export class CreateSongComponent implements OnInit {
 
   create() {
     this.songService.createSong(this.id, this.createSongForm).subscribe();
-    this.router.navigate(['/..']);
+    this.router.navigate(['artist']);
   }
 
   cancel() {
-    this.router.navigate(['/..']);
+    this.router.navigate(['artist']);
   }
 }

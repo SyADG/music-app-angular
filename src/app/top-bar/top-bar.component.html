@@ -13,8 +13,8 @@
                     <li class="nav-item">
                         <a class="nav-link navbar-dark scroll-link" routerLink='/artist'>Artists</a>
                     </li>
-                    <li>
-                        <a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a>
+                    <li class="nav-item">
+                        <a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link navbar-dark scroll-link">LogOut</a>
                     </li>
                 </ul>
             </div>

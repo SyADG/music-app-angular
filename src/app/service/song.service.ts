@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Song, RequestSong, RequestCreateSong } from '../songs/songs.model';
+import { Song } from '../songs/songs.model';
 import { FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 
@@ -25,26 +25,23 @@ export class SongService {
       .subscribe(response => this.songs.next(response));
   }
 
-  createSong(id: string, request: FormGroup): Observable<FormGroup> {
-    const songUrl = `${id}/songs`;
-    return this.http.post<FormGroup>(`${this.url}${songUrl}/add`, request.value);
+  createSong(id: String, request: FormGroup): Observable<FormGroup> {
+    const songUrl = `${this.url}${id}/songs/add`;
+    return this.http.post<FormGroup>(songUrl, request.value);
   }
 
   getSong(id: string, musicId: string): Observable<Song> {
-    const songUrl = `${id}/songs`;
-    const _url = `${this.url}${songUrl}/${musicId}`
-    return this.http.get<Song>(_url)
+    const songUrl = `${this.url}${id}/songs/${musicId}`;
+    return this.http.get<Song>(songUrl)
   }
 
   updateSong(id: string, musicId: string, request: FormGroup): Observable<FormGroup> {
-    const songUrl = `${id}/songs`;
-    const _url = `${this.url}${songUrl}/update/${musicId}`
-    return this.http.put<FormGroup>(_url, request.value)
+    const songUrl = `${this.url}${id}/songs/update/${musicId}`;
+    return this.http.put<FormGroup>(songUrl, request.value);
   }
 
   deleteSong(id: string, musicId: string): Observable<any> {
-    const songUrl = `${id}/songs`;
-    const _url = `${this.url}${songUrl}/delete/${musicId}`
-    return this.http.delete<any>(_url)
+    const songUrl = `${this.url}${id}/songs/delete/${musicId}`;
+    return this.http.delete<any>(songUrl);
   }
 }

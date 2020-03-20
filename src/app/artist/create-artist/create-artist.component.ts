@@ -28,9 +28,9 @@ export class CreateArtistComponent {
 
   create() {
     this.artistService.createArtist(this.createArtistForm).subscribe(res => { this.createArtistForm = res });
-    this.router.navigate(['/artist']);
+    this.router.navigate(['artist']);
   }
   cancel() {
-    this.router.navigate(['../']);
+    this.router.navigate(['artist']);
   }
 }

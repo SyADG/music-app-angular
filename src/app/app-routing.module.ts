@@ -13,6 +13,7 @@ import { LogoutComponent } from './session/logout/logout.component';
 import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: '', component: ArtistComponent, canActivate: [AuthGuardService]  },
   { path: 'artist', component: ArtistComponent, canActivate: [AuthGuardService]  },
   { path: 'artist/create', component: CreateArtistComponent, canActivate: [AuthGuardService] },
@@ -21,7 +22,6 @@ const routes: Routes = [
   { path: 'artist/:id/songs', component: SongsComponent, canActivate: [AuthGuardService] },
   { path: 'artist/:id/songs/add', component: CreateSongComponent, canActivate: [AuthGuardService] },
   { path: 'artist/:id1/songs/:id2', component: OptionsComponent, canActivate: [AuthGuardService] },
-  { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGuardService] },
 ]
 

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Artist } from '../artist.model';
 import { ArtistService } from '../../service/artist.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-delete-artist',
@@ -16,7 +15,6 @@ export class DeleteArtistComponent implements OnInit {
   constructor(
     private artistSerice: ArtistService,
     private route: ActivatedRoute,
-    private location: Location,
     private router: Router
   ) { }
 
@@ -28,10 +26,10 @@ export class DeleteArtistComponent implements OnInit {
   delete() {
     if (confirm(`Are you sure to delete ${this.artist.name}?`)) {
       this.artistSerice.deleteArtist(this.id).subscribe();
-      this.router.navigate(['/artist'])
+      this.router.navigate(['artist'])
     }
   }
   cancel() {
-    this.location.back()
+    this.router.navigate(['artist'])
   }
 }
