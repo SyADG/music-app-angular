@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  url: 'http://localhost:8080',
+  url: 'https://music-app-spring.azurewebsites.net',
   // url: 'https://music-app-spring.azurewebsites.net',
   production: false
 };
