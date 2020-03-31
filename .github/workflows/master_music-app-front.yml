@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'music-app-front'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_b98172091f6e44c2ab780f98ae7673e8 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_b93b5dbd75cb40258c4bf5f479ccd8aa }}
         package: .
