@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/f55cab51-a56d-4d68-ae29-1b9d51b51c70/resourceGroups/web-app-group/providers/Microsoft.Web/sites/music-app-front",
+    "appService.deploySubpath": ""
+}
